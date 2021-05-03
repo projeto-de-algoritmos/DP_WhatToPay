@@ -10,34 +10,27 @@ class App extends Component {
 
     this.state = {
       task_list: [],
-      task_name: "",
-      task_value: "",
-      task_cost: "",
+      task: {
+        name: "",
+        value: 0,
+        cost: 0,
+      }
     }
-
-    this.addTaskList = this.addTaskList.bind(this)
   }
 
-  addTaskList(){
-    var task = {
-      name: this.state.task_name,
-      value: this.state.task_value,
-      cost: this.state.task_cost
-    }
-
-    this.state.task_list.push(task)
-
-    console.log(this.state.task_list)
-  }
+  
 
   render(){
     return (
       <div className="App">
         <div className="Form">
-          <input type="text" onChange={(event) => {this.setState({task_name: event.target.value})}}></input>
-          <input type="text" onChange={(event) => {this.setState({task_value: event.target.value})}}></input>
-          <input type="text" onChange={(event) => {this.setState({task_cost: event.target.value})}}></input>
-          <input type="button" value="add" onClick={() => this.addTaskList()}></input>
+          <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, name: event.target.value}})}}></input>
+          <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, value: event.target.value}})}}></input>
+          <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, cost: event.target.value}})}}></input>
+          <input type="button" value="add" onClick={() => {
+              this.state.task_list.push(this.state.task)
+              console.log(this.state.task_list)
+            }}></input>
           <h4>{this.state.task_name}</h4>
           <h4>{this.state.task_value}</h4>
           <h4>{this.state.task_cost}</h4>
