@@ -60,7 +60,7 @@ class App extends Component {
         if (i === 0 || w === 0)
           K[i][w] = 0
         else if (tasks[i-1].cost <= w) 
-          K[i][w] = max(K[i-1][w - tasks[i-1].cost] + tasks[i-1].value, K[i-1][w]);
+          K[i][w] = max(Number(K[i-1][w - tasks[i-1].cost]) + Number(tasks[i-1].value), K[i-1][w]);
         else
           K[i][w] = K[i-1][w];
       }
@@ -73,7 +73,7 @@ class App extends Component {
     w = W
 
     for (i = n; res > 0 && i > 0; i--){
-      console.log(typeof res, typeof K[i-1][w])
+      console.log(res, w, tasks[i-1])
       if (res === K[i-1][w])
         continue
       else {
