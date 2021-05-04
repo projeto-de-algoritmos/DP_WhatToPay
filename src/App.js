@@ -94,12 +94,12 @@ class App extends Component {
       <div className="App">
         <h1>WhatToPay</h1>
         <div id="first-input">
-          <input type="text" onChange={(event) => this.setState({weight: event.target.value})}></input>
+          <input type="text" placeHolder="Dinheiro disponivel" onChange={(event) => this.setState({weight: event.target.value})}></input>
         </div>
         <div className="Form">
-          <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, name: event.target.value}})}}></input> {/* Inserir o nome da conta*/}
-          <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, value: event.target.value}})}}></input> {/*Inserir valor de benefício*/}
-          <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, cost: event.target.value}})}}></input> {/*Inserir custo da conta*/}
+          <input type="text" placeHolder="Nome da tarefa" onChange={(event) => {this.setState({task: {...this.state.task, name: event.target.value}})}}></input> {/* Inserir o nome da conta*/}
+          <input type="text" placeHolder="Valor de retorno" onChange={(event) => {this.setState({task: {...this.state.task, value: event.target.value}})}}></input> {/*Inserir valor de benefício*/}
+          <input type="text" placeHolder="Custo da tarefa" onChange={(event) => {this.setState({task: {...this.state.task, cost: event.target.value}})}}></input> {/*Inserir custo da conta*/}
           <input type="button" value="ADICIONAR" onClick={() => this.addNewTasks(this.state.task)}></input>
         </div>
           {this.state.task_list.map(({id, name}, index) => (
