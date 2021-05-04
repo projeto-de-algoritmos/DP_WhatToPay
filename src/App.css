@@ -1,11 +1,55 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.Form{
-  margin: auto;
+.Form {
+  display: flex;
+  flex-direction: column;
+  max-width: 290px;
+  margin-top: 1rem;
+  align-self: center;
+  width: 290px;
+}
+
+.Form input + input {
+  margin-top: 1rem;
 }
 
 .List{
   margin: auto;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  align-self: center;
+  justify-content: space-between;
+  align-items: center;
+  width: 290px;
+  background-color: #eaeaea;
+  border-radius: 6px;
+  padding: 1rem 2.5rem;
+  margin: 0.5rem 0;
+}
+
+.item-container button {
+  max-height: 40px;
+}
+
+#knap {
+  margin-top: 0.5rem;
+}
+
+#first-input {
+  width: 290px;
+  display: flex;
+}
+
+#first-input input {
+  width: 290px;
+  max-width: 290px;
 }

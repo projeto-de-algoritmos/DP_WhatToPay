@@ -92,14 +92,15 @@ class App extends Component {
   render(){
     return (
       <div className="App">
-        <div>
+        <h1>WhatToPay</h1>
+        <div id="first-input">
           <input type="text" onChange={(event) => this.setState({weight: event.target.value})}></input>
         </div>
         <div className="Form">
           <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, name: event.target.value}})}}></input> {/* Inserir o nome da conta*/}
           <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, value: event.target.value}})}}></input> {/*Inserir valor de benefício*/}
           <input type="text" onChange={(event) => {this.setState({task: {...this.state.task, cost: event.target.value}})}}></input> {/*Inserir custo da conta*/}
-          <input type="button" value="add" onClick={() => this.addNewTasks(this.state.task)}></input>
+          <input type="button" value="ADICIONAR" onClick={() => this.addNewTasks(this.state.task)}></input>
         </div>
           {this.state.task_list.map(({id, name}, index) => (
             <ListItem
@@ -108,7 +109,7 @@ class App extends Component {
               onDelete={() => this.deleteTask(index)}
             />
           ))}
-          <input type="button" onClick={() => this.knapsack()} value="Knapsack it"></input>
+          <input type="button" onClick={() => this.knapsack()} value="KNAPSACK IT" id="knap"></input>
           <h4>{this.state.message}</h4>
       </div>
     );
